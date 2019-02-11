@@ -1,0 +1,30 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/* header */
+
+#menu {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #ff7400), color-stop(0.00, #ffa443));
+  background: -webkit-linear-gradient(#ffa443, #ff7400);
+  background: -moz-linear-gradient(#ffa443, #ff7400);
+  background: -o-linear-gradient(#ffa443, #ff7400);
+  background: -ms-linear-gradient(#ffa443, #ff7400);
+  background: linear-gradient(#ffa443, #ff7400);
+  & li a:hover {
+      background: #ffa443;
+  }
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
