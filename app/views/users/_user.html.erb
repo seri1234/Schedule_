@@ -1,0 +1,9 @@
+<li>
+  <%= image_tag user.image_url,:size =>'30x30' if user.image_url? %>
+  <%= link_to user.user_name, user %>
+  <%= user.provider %>
+  <br>
+  <%= user.user_name %>
+<br>
+  <%= user.uid %>
+</li>

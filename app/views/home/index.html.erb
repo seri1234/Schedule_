@@ -1,5 +1,5 @@
 <% if session[:user_id]==nil %>
   <%= link_to "Twitterログイン", "/auth/twitter"%>
 <% else %>
-  <%= link_to "Twitterログアウト", "/logout"%>
+  <%= link_to "Twitterログアウト", "/logout", method: :delete%>
 <% end %>

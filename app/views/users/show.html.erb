@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+        <h1>
+          <%=image_tag @user.image_url,:size =>'150x150' if @user.image_url? %>
+          <%= @user.user_name%>
+        </h1>
+    </div>    
+    <div class="col-sm-6">
+      <ul>
+        スケジュール
+      </ul>
+    </div>
+  </div>
+</div>
