@@ -1,7 +1,0 @@
-ja:
-  activerecord:
-    attributes:
-      user:
-        schedule_name: "予定名"
-        day_of_the_week: "曜日"
-        

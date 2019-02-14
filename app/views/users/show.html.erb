@@ -8,7 +8,20 @@
     </div>    
     <div class="col-sm-6">
       <ul>
-        スケジュール
+        <h2>スケジュール</h2>
+        
+        <%= @user.title if @user.title %>
+        <% if @plan %>
+          <% @plan.each do |p| %>
+            <%= p.plan %>
+            <br>
+            <%= p.start_time %>
+            <br>
+            <%= p.end_time %>
+            <br>
+            <hr>
+          <% end %>
+        <% end%>
       </ul>
     </div>
   </div>

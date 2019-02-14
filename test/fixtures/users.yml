@@ -1,11 +1,9 @@
 user:
-    id: 1
-    provider: twitter
-    uid: 1
-    user_name: user
+  provider: twitter
+  uid: 1
+  user_name: user
     
 otheruser:
-    id: 2
-    provider: twitter
-    uid: 2
-    user_name: othe_user
+  provider: twitter
+  uid: 2
+  user_name: othe_user

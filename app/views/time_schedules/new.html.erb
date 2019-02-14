@@ -1,0 +1,12 @@
+    <%= form_for(@time_schedule,url: schedule_time_schedules_path) do |t| %>
+    <%= render 'shared/error_messages', object: t.object %>
+        <%= t.label :"時間辺りの予定名" %>
+        <%= t.text_field :time_schedule %>
+        <%= t.label :"それを始める時間" %>
+        <%= t.select :start_time, time_list %>
+        <%= t.label :"それを終える時間" %>
+        <%= t.select :end_time, time_list %>
+        <%= t.submit "時間辺りの予定決定" %>
+    <% end %>
+
+<%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedules } %>
