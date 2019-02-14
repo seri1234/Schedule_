@@ -3,7 +3,10 @@
     <div id="logo">Schedule</div>
     <nav>
       <ul class="nav navbar-nav navbar-right ">
-        <li><%= link_to "スケジュール", "#" %></li>
+        <li><%= link_to "スケジュール作成", new_schedule_path %></li>
+        <% if current_user.id.present?%>
+          <li><%= link_to "スケジュール", schedule_path(current_user.id) %></li>
+        <% end %>
         <li><%= link_to "ユーザー一覧", users_path %></li>
         <li><%= link_to "ユーザー情報", current_user %></li>
         <li><%= link_to "ログアウト", logout_path, method: :delete %></li>

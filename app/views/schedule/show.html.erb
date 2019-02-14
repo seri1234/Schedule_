@@ -1,0 +1,12 @@
+       <h2>スケジュール</h2>
+        
+        <%=  @day_schedule.day_schedule %>
+          <% @time_shcedule.each do |t| %>
+            <%= t.time_schedule %>
+            <br>
+            <%= t.start_time %>
+            <br>
+            <%= t.end_time %>
+            <br>
+            <hr>
+          <% end %>

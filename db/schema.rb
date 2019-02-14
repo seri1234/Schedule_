@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190210141555) do
+ActiveRecord::Schema.define(version: 20190213234215) do
+
+  create_table "day_schedules", force: :cascade do |t|
+    t.string "day_schedule"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_day_schedules_on_user_id"
+  end
+
+  create_table "time_schedules", force: :cascade do |t|
+    t.string "time_schedule"
+    t.string "start_time"
+    t.string "end_time"
+    t.integer "day_schedule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["day_schedule_id"], name: "index_time_schedules_on_day_schedule_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
