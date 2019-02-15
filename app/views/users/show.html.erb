@@ -5,23 +5,16 @@
           <%=image_tag @user.image_url,:size =>'150x150' if @user.image_url? %>
           <%= @user.user_name%>
         </h1>
+      <%if current_user?(@user)  %>
+      <%= button_to "アカウント削除", user_path(@user), :method => :delete, :class => 'btn btn-danger col-md-3' %>
+      <% end %>
     </div>    
     <div class="col-sm-6">
       <ul>
         <h2>スケジュール</h2>
-        
-        <%= @user.title if @user.title %>
-        <% if @plan %>
-          <% @plan.each do |p| %>
-            <%= p.plan %>
-            <br>
-            <%= p.start_time %>
-            <br>
-            <%= p.end_time %>
-            <br>
-            <hr>
-          <% end %>
-        <% end%>
+        <% if current_user.day_schedule.first.present? %>
+          <%= button_to "スケジュール", schedule_path(current_user.day_schedule.first.id), :method => :get, :class => 'btn btn-primary' %>
+        <% end %>
       </ul>
     </div>
   </div>
