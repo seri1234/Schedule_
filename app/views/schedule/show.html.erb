@@ -1,6 +1,9 @@
        <h2>スケジュール</h2>
+        <%= @chart %>
+        <%= timeline @chart %>
         
-        <%=  @day_schedule.day_schedule %>
+        <%= @day_schedule.day_schedule %>
+        <br>
           <% @time_shcedule.each do |t| %>
             <%= t.time_schedule %>
             <br>
@@ -10,3 +13,7 @@
             <br>
             <hr>
           <% end %>
+
+
+
+          <%= button_to "スケジュール削除",schedule_url(@day_schedule), :confirm => "本当に削除しますか?", :method => :delete, :class => 'btn btn-danger'  %>

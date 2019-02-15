@@ -1,3 +1,10 @@
+続けて、項目を入力してください。
+<br>
+<br>
+<br>
+グラフ表示の都合上、最初は0時以降からから始めて、最後は24時までに終わるようにして、日を跨がないようにしてください。
+<br>
+<div class= "col-md-4">
     <%= form_for(@time_schedule,url: schedule_time_schedules_path) do |t| %>
     <%= render 'shared/error_messages', object: t.object %>
         <%= t.label :"時間辺りの予定名" %>
@@ -8,5 +15,8 @@
         <%= t.select :end_time, time_list %>
         <%= t.submit "時間辺りの予定決定" %>
     <% end %>
-
+</div>
+<div class= "col-md-6">
+<%= timeline @chart %>
 <%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedules } %>
+</div>

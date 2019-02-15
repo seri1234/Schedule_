@@ -9,6 +9,9 @@ module SessionsHelper
   def logged_in?                                                                #logged_inメソッド。htmlのログイン判定で使う
     !current_user.nil?                                                          #current_userに値があればtrue、無ければfalseを返す。
   end
-  
+
+  def current_user?(user)                                                       #users_controllerのcorrect_userメソッドで使用
+    user == current_user                                                        #渡されたユーザーと現在のユーザーが同じならtrueを返す。
+  end
 
 end
