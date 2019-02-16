@@ -1,9 +1,19 @@
 user:
+  id: 1
   provider: twitter
-  uid: 1
-  user_name: user
-    
+  uid:  1
+  user_name:  user
+
 otheruser:
+  id: 2
   provider: twitter
   uid: 2
-  user_name: othe_user
+  user_name:  other_user
+  
+<% 7.times do |n| %>
+user_<%= n %>:
+  id: <%= n + 3 %>
+  provider: twitter
+  uid:  <%= n + 3 %>
+  user_name:  <%= "User #{n}" %>
+<% end %>

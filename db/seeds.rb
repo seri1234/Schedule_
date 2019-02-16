@@ -1,11 +1,11 @@
-User.create!(      provider: twitter,
+User.create!(      provider: "twitter",
                    uid:1,
-                   user_name:Example
+                   user_name: "Example"
                    )
 
-40.times do |n|
+7.times do |n|
   name  = Faker::Name.name
-  User.create!(   provider: twitter,
+  User.create!(   provider: "twitter",
                   uid:n+1,
-                  user_name:name)
+                  user_name: name)
 end
