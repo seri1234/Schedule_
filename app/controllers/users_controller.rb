@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-#  before_action :logged_in_user, only: [:index,:show, :destroy]
-#  before_action :correct_user,   only: :destroy 
+  before_action :logged_in_user, only: [:index,:show, :destroy]
+  before_action :correct_user,   only: :destroy 
   
   def index    
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -29,13 +29,5 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])                                            #URLに含まれている情報からparams[:id]のユーザー情報を取得
       redirect_to(root_url) unless current_user?(@user)                        #アクセスしたページのユーザーと、current_userが同じでなければルートページにリダイレクト
-    end
-    
-    # ログイン済みユーザーかどうか確認
-    def logged_in_user
-      unless logged_in?                                                         #logged_in?がfalseの場合
-        flash[:danger] = "ログインしてください"                                       #失敗フラッシュを表示
-        redirect_to root_path                                                   #ログインページへ
-      end
     end
 end
