@@ -7,17 +7,28 @@
   box-sizing:         border-box;
 }
 
-/* header */
 
+body{
+font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  background-image: image-url('bg.jpg');
+}
+
+/* loginページ */
+.login{
+  letter-specing: .1em;
+}
+
+
+
+/* header */
 #menu {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #ff7400), color-stop(0.00, #ffa443));
-  background: -webkit-linear-gradient(#ffa443, #ff7400);
-  background: -moz-linear-gradient(#ffa443, #ff7400);
-  background: -o-linear-gradient(#ffa443, #ff7400);
-  background: -ms-linear-gradient(#ffa443, #ff7400);
-  background: linear-gradient(#ffa443, #ff7400);
+  a {
+    color:#000000;
+
+  }
+  background-color: rgba(245,245,245,0.3);
   & li a:hover {
-      background: #ffa443;
+      background: rgba(205,92,92,0.9);
   }
 }
 
@@ -57,4 +68,15 @@ input, textarea, select, .uneditable-input {
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+}
+
+/*ユーザー一覧*/
+.user_index{
+  a {
+    font-style: italic ;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+  }
+  
 }

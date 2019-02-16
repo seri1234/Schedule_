@@ -1,5 +1,10 @@
+<div class ="login">
 <% if session[:user_id]==nil %>
+  <h1>スケジュール管理サービスにようこそ！<h2>
+    下のリンクからTwitterのOauth認証でログインできます
+    <br>
   <%= link_to "Twitterログイン", "/auth/twitter"%>
 <% else %>
   <%= link_to "Twitterログアウト", "/logout", method: :delete%>
 <% end %>
+</div>

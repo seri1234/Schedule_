@@ -1,22 +1,32 @@
-続けて、項目を入力してください。
+  <ul>
+    <li>引き続き項目を入力してください。</li>
+    <li>時間が早い予定から順に入力してください</li>
+    <li>終了時間は開始時間より後になるように入力してください</li>
+    <li>グラフ表示の都合上、最初の予定は0時以降からから始めて、最後の予定は24時までに終わるようにして、日を跨がないようにしてください。</li>
+    <li>入力が終わったらヘッダーリンクの「予定とユーザ情報」で確認したり、削除したりできます。
+  </ul>
 <br>
 <br>
-<br>
-グラフ表示の都合上、最初は0時以降からから始めて、最後は24時までに終わるようにして、日を跨がないようにしてください。
-<br>
-<div class= "col-md-4">
-    <%= form_for(@time_schedule,url: schedule_time_schedules_path) do |t| %>
-    <%= render 'shared/error_messages', object: t.object %>
-        <%= t.label :"時間辺りの予定名" %>
+  <div class="row">
+    <div class= "col-md-2">
+      <%= form_for(@time_schedule,url: schedule_time_schedules_path) do |t| %>
+      <%= render 'shared/error_messages', object: t.object %>
+        <%= t.label :"時間辺りの予定名    （255文字まで）" %>
         <%= t.text_field :time_schedule %>
-        <%= t.label :"それを始める時間" %>
+        <%= t.label :"  開始時間" %>
         <%= t.select :start_time, time_list %>
-        <%= t.label :"それを終える時間" %>
+        <%= t.label :"終了時間" %>
         <%= t.select :end_time, time_list %>
         <%= t.submit "時間辺りの予定決定" %>
-    <% end %>
-</div>
-<div class= "col-md-6">
-<%= timeline @chart %>
-<%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedules } %>
-</div>
+      <% end %>
+    </div>
+    <div class= "col-md-6">
+      <% if current_user.day_schedule.first.time_schedule.first %>
+        <%= timeline @chart %>
+      <% end%>
+    </div>
+    <div class= "col-md-4">
+      <%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedules } %>
+    </div">
+  </div">
+</div">

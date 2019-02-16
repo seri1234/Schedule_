@@ -18,25 +18,24 @@ class ScheduleController < ApplicationController
       end
     else                                                                        #もしすでにログインユーザの予定がもう存在すれば、
         @day_schedule = current_user.day_schedule.new                           #render用のダミー@day_schedule
-        flash.now[:danger] ="すでにあなたの予定は存在します、ヘッダーリンクのマイページから、スケジュールページに移動し、削除してからリトライしてください"
+        flash.now[:danger] ="すでにあなたの予定は存在します、ヘッダーリンクの「予定とユーザー情報」ページから、予定を削除してからリトライしてください"
         render 'schedule/new'                                                   #エラーを出して、リトライを促す。
     end
   end
 
   def show
      @day_schedule = DaySchedule.find(params[:id])
-     @time_shcedule =  @day_schedule.time_schedule
+     @time_schedule =  @day_schedule.time_schedule
 
     #グラフ描画用多次元配列の作成
       @chart = []                                                               #グラフ用の配列の宣言
-      
-      @time_shcedule.each do |num|
+      @time_schedule.each do |num|
         val1  =  num.time_schedule
         val2  =  num.start_time
         val2  =  conversion(val2)                                               #timechartのグラフの時刻表示が９時間ほどずれてしまうので、ずれを無くすために
         val3  =  num.end_time                                                   #applicationhelperのconversionメソッドを自作し、文字列を操作、
         val3  =  conversion(val3)                                               #多次元配列を作り、chartkickでグラフ描画。
-        @chart << [val1, val2, val3]                                            
+        @chart << [val1, val2, val3]
       end
     
     
