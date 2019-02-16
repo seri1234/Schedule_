@@ -2,7 +2,7 @@ class TimeSchedulesController < ApplicationController
   
   def new
     @time_schedules = current_user.day_schedule.find(params[:schedule_id]).time_schedule
-    @time_schedule = current_user.day_schedule.find(params[:schedule_id]).time_schedule.new
+    @time_schedule = current_user.day_schedule.find(params[:schedule_id]).time_schedule.build
 
    #グラフ描画用多次元配列の作成      
 
@@ -26,8 +26,10 @@ class TimeSchedulesController < ApplicationController
         format.js   { render :time_schedule_view}
       end
     else
+      flash.now[:danger] = "「時間辺りの予定名」欄が空か256文字以上です。「予定を追加する」で再度追加するか、スケジュールを削除して、もう一度作り直してください。"
       @time_schedules = []
-     render 'time_schedules/new'
+      @user = current_user
+     render 'users/show'
     end
   end
   
