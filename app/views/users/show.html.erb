@@ -12,7 +12,9 @@
     <div class="col-sm-6">
       <ul>
         <h2>スケジュール</h2>
+        <% if @user.day_schedule.first.present? %>
         <%= button_to "予定を見る", schedule_path(@user.day_schedule.first.id), :method => :get, :class => 'btn btn-primary' %>
+        <% end %>
         <% if current_user.day_schedule.first.present? && current_user?(@user) %>
           <br>
           <%= button_to "予定を追加する", new_schedule_time_schedule_path(current_user.day_schedule.first.id), :method => :get, :class => 'btn btn-default' %>
