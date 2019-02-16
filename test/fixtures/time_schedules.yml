@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  time_schedule: MyString
-  start_time: MyString
-  end_time: MyString
-  day_schedule: one
+first_time:
+  time_schedule: test
+  start_time:  1900-00-01 01:00:00
+  end_time:  1900-00-01 02:00:00
+  day_schedule: one_day
 
-two:
+second_time:
   time_schedule: MyString
   start_time: MyString
   end_time: MyString

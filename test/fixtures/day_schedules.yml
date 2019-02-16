@@ -1,9 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one_day:
+  day_schedule: today's_schedule
+  user_id: 1
+  user: user
 
-one:
-  day_schedule: MyString
-  user: one
-
-two:
-  day_schedule: MyString
-  user: two
+two_day:
+  day_schedule: oneday_schedule
+  user_id: 2
+  user: otheruser
