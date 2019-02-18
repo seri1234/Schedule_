@@ -1,7 +1,7 @@
 <div class ="login">
 <% if session[:user_id]==nil %>
-  <h1>スケジュール管理サービスにようこそ！<h2>
-    下のリンクからTwitterのOauth認証でログインできます
+  <h1>スケジュール管理サービスにようこそ！</h1>
+    <h2>下のリンクからTwitterのOauth認証でログインできます<h/2>
     <br>
   <%= link_to "Twitterログイン", "/auth/twitter"%>
 <% else %>

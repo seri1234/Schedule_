@@ -7,6 +7,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
   end
 
   test "ページネーションがうまく機能しているか" do
+    login(@user)
     get users_path
     assert_template 'users/index'
     assert_select 'div.pagination'

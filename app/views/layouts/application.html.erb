@@ -2,13 +2,13 @@
 <html lang="ja">
 <html>
   <head>
-    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-    <title>full_title(schedule)</title>
+    <title>Schedule</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all',
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
   </head>
   <body>
     <% if logged_in? %>  

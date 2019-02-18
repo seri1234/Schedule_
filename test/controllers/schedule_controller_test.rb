@@ -3,6 +3,7 @@ require 'test_helper'
 class ScheduleControllerTest < ActionDispatch::IntegrationTest
 
   def setup
+    @user = users(:user)
     @day_schedule =day_schedules(:one_day)
   end
 
@@ -18,7 +19,7 @@ class ScheduleControllerTest < ActionDispatch::IntegrationTest
 
   test "未ログイン状態でschedule_index_pathにpostアクセスするとDBに保存されずにルートページにリダイレクトされるか" do
     assert_no_difference 'DaySchedule.count' do
-      post schedule_index_path, params: { post: { day_schedule: "Lorem ipsum" } } 
+      post schedule_index_path, params: { post: { day_schedule: "テスト用文章" } } 
     end
     assert_redirected_to root_url
   end
@@ -29,4 +30,13 @@ class ScheduleControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url                     
   end
+
+
+  test "ログインユーザー以外のTimeScheduleにpostアクセスするときちんと失敗するか" do
+    login(@user) 
+    delete schedule_path(@day_schedule), params: { day_schedule: {user_id: 1,
+                                                                  day_schedule: "テスト用文章"  } }   #@day_scheduleはfixtureでother_userに紐付いている                          
+    assert_redirected_to root_url                                               
+  end
+
 end

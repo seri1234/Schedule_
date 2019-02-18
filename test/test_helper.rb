@@ -8,14 +8,23 @@ Minitest::Reporters.use!
 class ActiveSupport::TestCase
   fixtures :all
 
-  # テストユーザーがログイン中の場合にtrueを返す
-  def is_logged_in?
-    !session[:user_id].nil?
+  setup do
+    OmniAuth.config.test_mode = true
   end
-
-  # テストユーザーとしてログインする
-  def log_in_as(user)
-    session[:user_id] = user.id
+  
+  teardown do
+    OmniAuth.config.test_mode = false
   end
-
+  
+  def login(user)
+    OmniAuth.config.add_mock(:twitter, { uid: user.uid })
+    get '/auth/twitter'
+    request.env['omniauth.env'] = OmniAuth.config.mock_auth[:twitter]
+    get '/auth/twitter/callback'
+  end
+  
+  def logout
+    delete '/logout'
+  end
+  
 end

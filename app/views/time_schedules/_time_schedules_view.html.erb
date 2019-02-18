@@ -2,8 +2,7 @@
 <%  time_schedules.each do |t| %>
     <li class="list-group-item list-group-item-info"> 
         <%= t.time_schedule %>：　
-        <%= t.start_time.slice(11..15)  %> ～
-        <%= t.end_time.slice(11..15)  %>
+        <%= t.start_time.slice(11..15)  %> ～ <%= t.end_time.slice(11..15)  %>
     </li>   
 <% end %>
 </ul>

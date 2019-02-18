@@ -1,9 +1,4 @@
 one_day:
   day_schedule: today's_schedule
-  user_id: 1
-  user: user
+  user: other_user
 
-two_day:
-  day_schedule: oneday_schedule
-  user_id: 2
-  user: otheruser
