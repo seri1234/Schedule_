@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
    include SessionsHelper
    include TimeSchedulesHelper
    
-     private
+    private
   
     def logged_in_user                                                          #ログイン済みユーザーかどうか確認
       unless logged_in?                                                         #logged_in?がfalseの場合

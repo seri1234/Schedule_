@@ -1,12 +1,11 @@
-  <h2>スケジュール</h2>
-  <div class="row">
-    <div class= "col-md-4">
-      <%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedule } %>
-    </div>
-    <div class= "col-md-8">
-       <% if @day_schedule.time_schedule.first %>
-          <%= timeline @chart %>
-      <% end%>
-    </div>
+<h2>スケジュール</h2>
+<div class="row">
+  <div class= "col-md-4">
+    <%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedule } %>
+  </div>
+  <div class= "col-md-8">
+     <% if @day_schedule.time_schedule.first %>
+        <%= timeline @chart %>
+    <% end%>
   </div>
 </div>

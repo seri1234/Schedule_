@@ -1,8 +1,7 @@
 module ApplicationHelper
 
-
-#時刻の選択リスト  
-  def time_list                                                                 #時間選択のセレクト
+  #時刻の選択リスト  
+  def time_list                                                                 #時間選択のセレクトボックス用リスト
     [
       ['00:00', '1900-00-00 00:00:00'],
       ['01:00', '1900-00-00 01:00:00'],
@@ -35,10 +34,7 @@ module ApplicationHelper
   end
   
   def conversion(string)                                                        #グラフの表示が9時間分ずれているので、変換メソッドを作成。
-   
     a = string[11..12]                                                          #変数[11..12]で、変数内の前から12~13番目の文字情報を取り出す
-    
-    
     return "1900-00-00 15:00:00"  if a == "00"                                  #文字12~13番目の文字がどれかなら、対応する文字列を返す
     return "1900-00-00 16:00:00"  if a == "01"
     return "1900-00-00 17:00:00"  if a == "02"
@@ -65,6 +61,18 @@ module ApplicationHelper
     return "1900-00-01 14:00:00"  if a == "23"
     return "1900-00-01 15:00:00"  if a == "24"
   end
-  
-  
+
+  #グラフ描画用2次元配列の作成  
+  def chart(time_schedule)
+      chart = []                                                                #グラフ用の配列の宣言
+      time_schedule.each do |num|
+        val1  =  num.time_schedule
+        val2  =  num.start_time
+        val2  =  conversion(val2)                                               #timechartのグラフの時刻表示が９時間ほどずれてしまうので、ずれを無くすために
+        val3  =  num.end_time                                                   #applicationhelperのconversionメソッドを自作し、文字列を操作、
+        val3  =  conversion(val3)                                               #多次元配列を作り、chartkickでグラフ描画。
+        chart << [val1, val2, val3]
+      end
+      return  chart
+  end
 end

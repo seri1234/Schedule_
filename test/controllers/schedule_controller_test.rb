@@ -35,7 +35,7 @@ class ScheduleControllerTest < ActionDispatch::IntegrationTest
   test "ログインユーザー以外のTimeScheduleにpostアクセスするときちんと失敗するか" do
     login(@user) 
     delete schedule_path(@day_schedule), params: { day_schedule: {user_id: 1,
-                                                                  day_schedule: "テスト用文章"  } }   #@day_scheduleはfixtureでother_userに紐付いている                          
+                                                                  day_schedule: "テスト用文章"  } } #@day_scheduleはfixtureでother_userに紐付いている                          
     assert_redirected_to root_url                                               
   end
 

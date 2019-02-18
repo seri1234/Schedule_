@@ -6,8 +6,8 @@ class SchduleInterfaceTest < ActionDispatch::IntegrationTest
     @user = users(:user)
   end
 
-  test "スケジュール新規作成機能に関するテスト）" do                             #createアクションのif文条件分岐3つ網羅
-    login(@user)                                                                        #test_helperのloginメソッド
+  test "スケジュール新規作成機能と削除に関するテスト）" do                      #createアクションのif文条件分岐3つ網羅
+    login(@user)                                                                #test_helperのloginメソッド
     get new_schedule_path                                                        
     assert_select 'h1', "スケジュール入力ページ" 
     assert_select 'input[type="text"]'
