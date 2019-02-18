@@ -41,9 +41,9 @@ class TimeSchedulesController < ApplicationController
         params.require(:time_schedule).permit(:schedule_id,:time_schedule,:time_schedule, :start_time, :end_time)
       end
       
-    def correct_user
-      @day_scheduledayschedule = current_user.day_schedule.find_by(id: params[:id]) #ログインしているユーザーで、アクセスするページのschedule_idを検索
-      redirect_to root_url if @day_schedule.nil?                                    #見つからなければルートページにリダイレクト
-    end
+      def correct_user
+        @day_schedule = current_user.day_schedule.find_by(params[:day_schedule_id])        #ログインしているユーザーで、アクセスするページのschedule_idを検索
+        redirect_to root_url if @day_schedule.nil?                                #見つからなければルートページにリダイレクト
+      end
 end
 

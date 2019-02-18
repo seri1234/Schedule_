@@ -1,13 +1,13 @@
 user:
   id: 1
   provider: twitter
-  uid:  1
+  uid:  123
   user_name:  user
 
-otheruser:
+other_user:
   id: 2
   provider: twitter
-  uid: 2
+  uid: 456
   user_name:  other_user
   
 <% 7.times do |n| %>
