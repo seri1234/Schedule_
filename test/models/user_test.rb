@@ -25,7 +25,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
-  
   test "Userモデルが削除されると紐付いているDayScheduleモデルも同時に削除されるか" do
     @user.save
     @user.day_schedule.create!(day_schedule: "test")

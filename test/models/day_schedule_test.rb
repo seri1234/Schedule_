@@ -26,7 +26,6 @@ class DayScheduleTest < ActiveSupport::TestCase
     assert_not @day_schedule.valid?
   end  
   
-
   test "Dayscheduleモデルが削除されると紐付いているTimeScheduleモデルも同時に削除されるか" do
     @day_schedule.save
     @day_schedule.time_schedule.create!(time_schedule: "test" ,start_time:"1900-00-00 01:00:00",end_time:"1900-00-00 02:00:00")

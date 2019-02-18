@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリはあなたの一日のスケジュールを保存でき、みんなと共有できるwebサービスです！
 
-Things you may want to cover:
+このアプリのポイントは、
 
-* Ruby version
+ * あなたのツイッターアカウントでログインできます
 
-* System dependencies
+ * あなたの一日のスケジュールを時間別に保存し、閲覧できます
 
-* Configuration
+ * 作ったスケジュールはカラフルなタイムラインのグラフで確認できます
+ 
+ * グラフのタイムラインにカーソルを置くと(スマホならタップ)詳細な時間が表示されます。
 
-* Database creation
+ * 他の人のプロフィールからその人のスケジュールを見て参考にできます
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

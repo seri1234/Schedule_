@@ -10,12 +10,12 @@ class TimeSchedulesControllerTest < ActionDispatch::IntegrationTest
 
 
   test "未ログイン状態でtime_schedule_pathにgetアクセスすると、ルートページにリダイレクトされるか" do
-    get new_schedule_time_schedule_path(@time_schedule)                         #newアクション  /schedule/:schedule_id/time_schedules/new
+    get new_schedule_time_schedule_path(@time_schedule)                         
     assert_redirected_to root_url
   end
   
   test "未ログイン状態でtime_schedule_pathにpostアクセスするとにpostアクセスするとDBに保存されずにルートページにリダイレクトされるか" do
-      assert_no_difference 'TimeSchedule.count' do                               #createアクション  /schedule/:schedule_id/time_schedules
+      assert_no_difference 'TimeSchedule.count' do
       post schedule_time_schedules_path(@time_schedule), params: { time_schedule: {day_schedule_id: 1,
                                                                   time_schedule: "test",
                                                                   start_time:  "1900-00-01 01:00:00",
@@ -30,7 +30,6 @@ class TimeSchedulesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url                                               
   end
  
-  
   test "ログインユーザー以外のTimeScheduleにpostアクセスするときちんと失敗するか" do
     login(@user) 
     post schedule_time_schedules_path(@time_schedule), params: { time_schedule: {day_schedule_id: 1,

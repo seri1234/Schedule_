@@ -7,7 +7,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @other_user = users(:other_user)
   end
 
-  test "未ログイン状態でユーザ一覧ページにgetアクセスするとログインページにリダイレクトれるか" do                            
+  test "未ログイン状態でユーザ一覧ページにgetアクセスするとログインページにリダイレクトされるか" do                            
     get users_path                                                              
     assert_redirected_to root_url
   end

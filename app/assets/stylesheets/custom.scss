@@ -7,7 +7,6 @@
   box-sizing:         border-box;
 }
 
-
 body{
 font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   background-image: image-url('bg.jpg');
@@ -18,13 +17,10 @@ font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシ�
   letter-specing: .1em;
 }
 
-
-
 /* header */
 #menu {
   a {
     color:#000000;
-
   }
   background-color: rgba(245,245,245,0.3);
   & li a:hover {
@@ -76,7 +72,5 @@ input, textarea, select, .uneditable-input {
     font-style: italic ;
     font-size: 1.5em;
     font-weight: bold;
-    
   }
-  
 }

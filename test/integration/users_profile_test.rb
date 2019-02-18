@@ -37,7 +37,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "他のユーザーでアクセスした場合、予定を追加するボタンとと予定削除削除ボタンが表示されないか" do
+  test "他のユーザーでアクセスした場合、予定を追加するボタンと予定削除ボタンが表示されないか" do
     login(@user)
     get new_schedule_path  
     post schedule_index_path, params: { day_schedule: { day_schedule: "テスト用文章" } } 

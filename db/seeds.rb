@@ -1,7 +1,6 @@
 User.create!(      provider: "twitter",
                    uid:1,
-                   user_name: "Example"
-                   )
+                   user_name: "Example")
 
 7.times do |n|
   name  = Faker::Name.name
