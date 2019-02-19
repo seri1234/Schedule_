@@ -33,9 +33,13 @@ class TimeSchedulesInterfaceTest < ActionDispatch::IntegrationTest
     #作成されたかの確認
     get new_schedule_time_schedule_path(@user.day_schedule.first)               #time_schedule追加ページ
     assert_match "テスト用文章" , response.body 
-    assert_match "02:00 ～ 03:00" , response.body                              
+    assert_match "<td>02:00</td>", response.body
+    assert_match "<td>～</td>", response.body
+    assert_match "<td>03:00</td>", response.body
     get schedule_path(@user.day_schedule.first)                                 #スケジュール確認ページ
     assert_match "テスト用文章" , response.body 
-    assert_match "02:00 ～ 03:00" , response.body
+    assert_match "<td>02:00</td>", response.body
+    assert_match "<td>～</td>", response.body
+    assert_match "<td>03:00</td>", response.body
   end
 end

@@ -74,3 +74,18 @@ input, textarea, select, .uneditable-input {
     font-weight: bold;
   }
 }
+
+/* スケジュール一覧表示 */
+.table{
+  border: 1px solid #aaa;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color:#DCF0F3;
+  color: #086A87;
+  td {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
