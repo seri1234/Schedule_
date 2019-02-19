@@ -1,4 +1,4 @@
-<h2>スケジュール</h2>
+<h2><%= @day_schedule.day_schedule%></h2>
 <div class="row">
   <div class= "col-md-4">
     <%= render partial: 'time_schedules/time_schedules_view', locals: { time_schedules: @time_schedule } %>
